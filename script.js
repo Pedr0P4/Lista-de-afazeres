@@ -8,3 +8,11 @@ function reset(){
     localStorage.clear();
     contents.innerHTML = "";
 }
+
+function deleteCard(){
+
+}
+
+function editCard(){
+    
+}

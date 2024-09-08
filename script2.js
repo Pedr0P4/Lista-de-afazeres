@@ -44,8 +44,8 @@ function add(){
                 <p id="card-grade" style="background-color: ${indice.col};">${indice.imp}</p>
             </div>
             <div class="button-container">
-                <button><img src="./images/del-icon.png" alt="delete icon" id="del-icon"></button>
-                <button><a href="dados"><img src="./images/edit-icon.png" alt="edit icon" id="edit-icon"></a></button>
+                <button onclick="deleteCard()"><img src="./images/del-icon.png" alt="delete icon" id="del-icon"></button>
+                <button onclick="editCard()"><a href="dados"><img src="./images/edit-icon.png" alt="edit icon" id="edit-icon"></a></button>
             </div>
         </div>
         `
