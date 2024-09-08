@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar</title>
+    <link rel="stylesheet" href="add-style.css">
+</head>
+<body>
+    <h1>Adicionar afazer</h1>
+    <section class="info">
+        <p>Título da tarefa</p>
+        <input type="text" class="input-text-short" id="titulo">
+        <p>Descrição da tarefa</p>
+        <textarea class="input-text-long" id="descricao"></textarea>
+        <p>Grau de importância</p>
+        <div class="selection">
+            <input type="radio" name="imp" id="op1"> <label for="op1">Normal</label> <br>
+            <input type="radio" name="imp" id="op2"> <label for="op2">Necessário</label> <br>
+            <input type="radio" name="imp" id="op3"> <label for="op3">Urgente</label> <br>
+        </div>
+        <a href="index.html"><button class="adicionar" onclick="add()">ADICIONAR</button></a>
+    </section>
+
+    <script src="dados.js"></script>
+    <script src="script2.js"></script>
+</body>
+</html>
