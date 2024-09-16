@@ -26,26 +26,35 @@ function add(){
         title : titulo,
         desc : descricao,
         imp : importancia,
-        col : color 
+        col : color,
+        key : 0
     }
 
     let dados = [];
     dados = JSON.parse(localStorage.getItem('dados')) || [];
     dados.push(dado);
+
+
+    let contador = 0;
+    for(let indice of dados){
+        indice.key = ++contador;
+    }
+
     localStorage.setItem('dados', JSON.stringify(dados));
 
     let resultado = "";
 
     for(let indice of JSON.parse(localStorage.getItem('dados'))){
+        let i = 1;
         resultado += `
-        <div class="item">
+        <div class="item" id="item${i}">
             <div class="text-container">
                 <p id="card-title">${indice.title}</p>
                 <p id="card-grade" style="background-color: ${indice.col};">${indice.imp}</p>
             </div>
             <div class="button-container">
-                <button onclick="deleteCard()"><img src="./images/del-icon.png" alt="delete icon" id="del-icon"></button>
-                <button onclick="editCard()"><a href="dados"><img src="./images/edit-icon.png" alt="edit icon" id="edit-icon"></a></button>
+                <button class="delete-btn" name="${i}"><img src="./images/del-icon.png" alt="delete icon" id="del-icon"></button>
+                <button onclick="editCard()" name="${i}"><a href="dados"><img src="./images/edit-icon.png" alt="edit icon" id="edit-icon"></a></button>
             </div>
         </div>
         `
